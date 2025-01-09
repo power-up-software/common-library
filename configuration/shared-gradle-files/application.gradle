@@ -1,0 +1,12 @@
+//file:noinspection GrUnresolvedAccess
+
+apply from: "${rootDir}/" + configurationPath + '/shared-gradle-files/databaseless-application.gradle'
+
+dependencies {
+    implementation group: 'org.mybatis', name: 'mybatis-spring', version: dependencyVersions.mybatisMybatisSpringVersion
+    implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: dependencyVersions.mybatisSpringBootMybatisSpringBootStarterVersion, {
+        exclude group: "org.springframework.boot"
+        exclude group: "org.springframework"
+    }
+    implementation group: 'org.postgresql', name: 'postgresql', version: dependencyVersions.postgresqlPostgresqlVersion
+}

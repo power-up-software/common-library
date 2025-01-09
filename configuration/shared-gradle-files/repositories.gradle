@@ -1,0 +1,10 @@
+//file:noinspection GrUnresolvedAccess
+//file:noinspection GroovyAssignabilityCheck
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url = "https://repo.spring.io/milestone/"
+    }
+}

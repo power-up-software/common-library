@@ -1,0 +1,80 @@
+//file:noinspection GrUnresolvedAccess
+//file:noinspection GroovyAssignabilityCheck
+
+apply from: "${rootDir}/" + configurationPath + '/shared-gradle-files/common.gradle'
+apply from: "${rootDir}/" + configurationPath + '/shared-gradle-files/checkstyle.gradle'
+
+configurations {
+    xsd
+    tests
+}
+
+dependencies {
+    api group: 'javax.xml.bind', name: 'jaxb-api', version: dependencyVersions.javaxXmlBindJaxbApiVersion
+}
+
+clean {
+    delete 'src/main/generated'
+    delete "${rootDir}/build"
+    delete "${rootDir}/schema"
+}
+
+tasks.register('extractXsd') {
+    doLast {
+        configurations.xsd.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+            if (artifact.file.name.endsWith('.zip')) {
+                copy {
+                    from zipTree(artifact.file)
+                    into "${rootDir}"
+                }
+            }
+        }
+    }
+}
+
+tasks.register('copyXsd') {
+    doLast {
+        String copyLocation = "${rootDir}/schema/"
+        if (!new File(copyLocation).exists()) {
+            mkdir {
+                copyLocation
+            }
+        }
+        copy {
+            from('src/main/resources/schema') {
+                include '*.xsd'
+            }
+            into(copyLocation)
+        }
+    }
+}
+
+tasks.register('makeZip', Zip) {
+    dependsOn 'compileJava'
+    archiveBaseName.set("${moduleName}")
+    from('build/generated/sources/xjc/resources/META-INF') {
+        include("${moduleName}.episode")
+        into('schema/episodes/')
+    }
+    from('src/main/resources/schema') {
+        include('*.xsd')
+        into('schema')
+    }
+    archiveExtension.set('zip')
+}
+
+tasks.register('switchToJakarta') {
+    doLast {
+        ant.replaceregexp(match: 'javax', replace: 'jakarta', flags: 'g', byline: true) {
+            fileset(dir: 'src/main/generated')
+        }
+        ant.replaceregexp(match: 'jakarta.xml.datatype.XMLGregorianCalendar', replace: 'javax.xml.datatype.XMLGregorianCalendar', flags: 'g', byline: true) {
+            fileset(dir: 'src/main/generated')
+        }
+    }
+}
+
+//Must be after makeZip is defined
+apply from: "${rootDir}/" + configurationPath + '/shared-gradle-files/publish.gradle'
+
+jar.dependsOn makeZip

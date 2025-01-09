@@ -1,0 +1,49 @@
+//file:noinspection GrUnresolvedAccess
+//file:noinspection GroovyAssignabilityCheck
+
+apply from: "${rootDir}/" + configurationPath + '/shared-gradle-files/common.gradle'
+apply from: "${rootDir}/" + configurationPath + '/shared-gradle-files/publish.gradle'
+apply from: "${rootDir}/" + configurationPath + '/shared-gradle-files/checkstyle.gradle'
+
+apply plugin: 'org.springframework.boot'
+jar.enabled = true
+
+dependencies {
+    implementation group: 'com.fasterxml.woodstox', name: 'woodstox-core', version: dependencyVersions.fasterxmlWoodstoxWoodstoxCoreVersion
+    implementation group: 'com.thoughtworks.xstream', name: 'xstream', version: dependencyVersions.thoughtworksXstreamXstreamVersion
+    implementation group: 'commons-codec', name: 'commons-codec', version: dependencyVersions.commonsCodecCommonsCodecVersion
+    implementation group: 'io.reactivex', name: 'rxjava', version: dependencyVersions.ioReactivexRxjavaVersion
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: dependencyVersions.ioSpringfoxSpringfoxSwaggerUiVersion
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: dependencyVersions.ioSpringfoxSpringfoxSwagger2Version
+    implementation group: 'io.springfox', name: 'springfox-data-rest', version: dependencyVersions.ioSpringfoxSpringfoxDataRestVersion, {
+        exclude group: "org.springframework"
+    }
+    implementation group: 'io.swagger.core.v3', name: 'swagger-annotations', version: dependencyVersions.ioSwaggerCoreV3SwaggerAnnotationsVersion
+    implementation group: 'io.swagger.core.v3', name: 'swagger-models', version: dependencyVersions.ioSwaggerCoreV3SwaggerModelsVersion
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: dependencyVersions.apacheHttpcomponentsHttpclientVersion, {
+        exclude group: "commons-logging"
+    }
+    implementation group: 'org.apache.httpcomponents', name: 'httpcore', version: dependencyVersions.apacheHttpcomponentsHttpcoreVersion
+    implementation group: 'com.github.ulisesbocchio', name: 'jasypt-spring-boot-starter', version: dependencyVersions.githubUlisesbocchioJasyptSpringBootStarterVersion
+    implementation group: 'org.springframework', name: 'spring-jms', version: dependencyVersions.springframeworkSpringJmsVersion
+    implementation group: 'org.springframework', name: 'spring-web', version: dependencyVersions.springframeworkSpringWebVersion
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: dependencyVersions.springframeworkSpringWebmvcVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: dependencyVersions.springframeworkBootSpringBootConfigurationProcessorVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: dependencyVersions.springframeworkBootSpringBootStarterAopVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: dependencyVersions.springframeworkBootSpringBootStarterSecurityVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: dependencyVersions.springframeworkBootSpringBootStarterWebVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: dependencyVersions.springframeworkBootSpringBootStarterTomcatVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: dependencyVersions.springframeworkBootSpringBootStarterActuatorVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-oauth2-client', version: dependencyVersions.springframeworkBootSpringBootStarterOauth2ClientVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: dependencyVersions.springframeworkBootSpringBootStarterThymeleafVersion
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-oauth2-resource-server', version: dependencyVersions.springframeworkBootSpringBootStarterOauth2ResourceServerVersion
+    implementation group: 'org.springframework.security', name: 'spring-security-config', version: dependencyVersions.springframeworkSecuritySpringSecurityConfigVersion
+    implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: dependencyVersions.springframeworkSecuritySpringSecurityCryptoVersion
+    implementation group: 'org.springframework.security', name: 'spring-security-web', version: dependencyVersions.springframeworkSecuritySpringSecurityWebVersion
+    implementation group: 'org.springframework.data', name: 'spring-data-rest-core', version: dependencyVersions.springframeworkDataSpringDataRestCoreVersion
+    implementation group: 'org.springframework.data', name: 'spring-data-rest-webmvc', version: dependencyVersions.springframeworkDataSpringDataRestWebmvcVersion
+    implementation group: 'org.yaml', name: 'snakeyaml', version: dependencyVersions.yamlSnakeyamlVersion
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: dependencyVersions.springframeworkBootSpringBootStarterTestVersion
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-test', version: dependencyVersions.springframeworkBootSpringBootTestVersion
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-test-autoconfigure', version: dependencyVersions.springframeworkBootSpringBootTestAutoconfigureVersion
+}

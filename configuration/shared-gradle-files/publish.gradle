@@ -1,0 +1,21 @@
+//file:noinspection GrUnresolvedAccess
+//file:noinspection GroovyAssignabilityCheck
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            if (project.tasks.findByName('makeZip')) {
+                artifact source: makeZip, extension: "zip"
+            }
+            artifact sourceJar
+            artifact javadocJar
+            if (project.tasks.findByName('testJar')) {
+                artifact testJar
+            }
+            groupId = "${mavenGroupId}"
+            artifactId = "${moduleName}"
+            version = project.version
+            from components.java
+        }
+    }
+}

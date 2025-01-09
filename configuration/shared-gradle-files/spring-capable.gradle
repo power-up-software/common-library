@@ -1,0 +1,10 @@
+//file:noinspection GrUnresolvedAccess
+
+dependencies {
+    implementation group: 'org.springframework', name: 'spring-core', version: dependencyVersions.springframeworkSpringCoreVersion
+    implementation group: 'org.springframework', name: 'spring-web', version: dependencyVersions.springframeworkSpringWebVersion
+    implementation group: 'org.springframework', name: 'spring-context', version: dependencyVersions.springframeworkSpringContextVersion
+    implementation group: 'org.springframework', name: 'spring-beans', version: dependencyVersions.springframeworkSpringBeansVersion
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: dependencyVersions.springframeworkSpringWebmvcVersion
+    implementation group: 'jakarta.annotation', name: 'jakarta.annotation-api', version: dependencyVersions.jakartaAnnotationJakartaAnnotationApiVersion
+}

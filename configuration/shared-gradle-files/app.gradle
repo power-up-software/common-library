@@ -1,0 +1,5 @@
+//file:noinspection GrUnresolvedAccess
+
+apply from: "${rootDir}/" + configurationPath + '/shared-gradle-files/common.gradle'
+apply from: "${rootDir}/" + configurationPath + '/shared-gradle-files/publish.gradle'
+apply from: "${rootDir}/" + configurationPath + '/shared-gradle-files/checkstyle.gradle'

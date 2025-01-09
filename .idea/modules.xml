@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.powerup.common-library.iml" filepath="$PROJECT_DIR$/.idea/modules/com.powerup.common-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/com.powerup.common-library.api.iml" filepath="$PROJECT_DIR$/.idea/modules/api/com.powerup.common-library.api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/com.powerup.common-library.api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/api/com.powerup.common-library.api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/com.powerup.common-library.api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/api/com.powerup.common-library.api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-docker/com.powerup.common-library.app-docker.iml" filepath="$PROJECT_DIR$/.idea/modules/app-docker/com.powerup.common-library.app-docker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-docker/com.powerup.common-library.app-docker.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app-docker/com.powerup.common-library.app-docker.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app-docker/com.powerup.common-library.app-docker.test.iml" filepath="$PROJECT_DIR$/.idea/modules/app-docker/com.powerup.common-library.app-docker.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/installer/com.powerup.common-library.installer.iml" filepath="$PROJECT_DIR$/.idea/modules/installer/com.powerup.common-library.installer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/installer/com.powerup.common-library.installer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/installer/com.powerup.common-library.installer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/installer/com.powerup.common-library.installer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/installer/com.powerup.common-library.installer.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/model/com.powerup.common-library.model.iml" filepath="$PROJECT_DIR$/.idea/modules/model/com.powerup.common-library.model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/model/com.powerup.common-library.model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/model/com.powerup.common-library.model.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/model/com.powerup.common-library.model.test.iml" filepath="$PROJECT_DIR$/.idea/modules/model/com.powerup.common-library.model.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-model/com.powerup.common-library.web-model.iml" filepath="$PROJECT_DIR$/.idea/modules/web-model/com.powerup.common-library.web-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-model/com.powerup.common-library.web-model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/web-model/com.powerup.common-library.web-model.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web-model/com.powerup.common-library.web-model.test.iml" filepath="$PROJECT_DIR$/.idea/modules/web-model/com.powerup.common-library.web-model.test.iml" />
+    </modules>
+  </component>
+</project>

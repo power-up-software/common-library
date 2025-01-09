@@ -1,0 +1,18 @@
+//file:noinspection GrUnresolvedAccess
+
+tasks.register('extractDatabaseFiles') {
+    doLast {
+        configurations.sql.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+            copy {
+                from zipTree(artifact.file)
+                into 'database-content/' + artifact.file.name.replaceAll('-([0-9]+\\.)+(-)*.*\\.zip', '')
+            }
+        }
+    }
+}
+
+jar.finalizedBy extractDatabaseFiles
+
+clean {
+    delete 'database-content'
+}

@@ -1,0 +1,6 @@
+<FindBugsFilter>
+  <Match>
+    <Class name="~.*\.*DatabaseServiceAbs"/>
+    <Bug pattern="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE,SQL_INJECTION_JDBC"/>
+  </Match>
+</FindBugsFilter>

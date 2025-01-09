@@ -1,0 +1,8 @@
+//file:noinspection GrUnresolvedAccess
+//file:noinspection GroovyAssignabilityCheck
+rootProject.name = 'com.powerupsoftwareengineering.common-library'
+
+include 'api'
+include 'app-docker'
+include 'model'
+include 'web-model'

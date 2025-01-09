@@ -1,0 +1,15 @@
+//file:noinspection GroovyAssignabilityCheck
+//file:noinspection GrUnresolvedAccess
+ext {
+    moduleName = 'common-model'
+}
+
+apply from: "${rootDir}/${configurationPath}/shared-gradle-files/model.gradle"
+
+
+dependencies {
+    implementation group: 'com.powerupsoftwareengineering.java-immutable-model', name: 'java-immutable-model', version: dependencyVersions.powerupsoftwareengineeringJavaImmutableModelJavaImmutableModelVersion
+    implementation group: 'com.google.guava', name: 'guava', version: dependencyVersions.googleGuavaGuavaVersion
+    implementation group: 'org.apache.commons', name: 'commons-collections4', version: dependencyVersions.apacheCommonsCommonsCollections4Version
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: dependencyVersions.apacheCommonsCommonsLang3Version
+}
