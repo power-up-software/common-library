@@ -7,13 +7,12 @@
         <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="PLATFORM" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="corretto-21" />
+        <option name="gradleJvm" value="corretto-24" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/api" />
             <option value="$PROJECT_DIR$/app-docker" />
-            <option value="$PROJECT_DIR$/installer" />
             <option value="$PROJECT_DIR$/model" />
             <option value="$PROJECT_DIR$/web-model" />
           </set>
